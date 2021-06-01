@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: Chris Ruettimann <chris@bitbull.ch>
+  description: Install and configure Guacamole with Nginx ssl reverse proxy
+  role_name: guacamole
+
+  license: GPLv3
+
+  min_ansible_version: 2.9
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+    - 8
+    - Stream
+
+  galaxy_tags: [guacamole, nginx, html5, rdp, vnc, ssh, telnet]
+...

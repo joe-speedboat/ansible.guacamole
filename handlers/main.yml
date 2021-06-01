@@ -1,0 +1,19 @@
+---
+- name: restart tomcat
+  systemd:
+    name: tomcat
+    state: restarted
+    enabled: yes
+
+- name: restart nginx
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+- name: restart guacd
+  systemd:
+    name: guacd
+    state: restarted
+    enabled: yes
+...

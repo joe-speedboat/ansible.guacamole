@@ -1,0 +1,22 @@
+---
+
+# Don't touch this file
+
+- name: include global vars file if present
+  import_tasks: include-vars.yml
+
+- name: find all task files
+  local_action:
+    shell
+      ls -1 {{ role_path }}/tasks/*/*  | sed 's#.*\/##' | egrep '[0-9]{2}_.*\.yml' | sort -n -u
+  register: include_file_name_results
+  changed_when: False
+
+- name: "include tasks"
+  include_tasks: "include-file.yml"
+  loop_control:
+    loop_var: include_file_name 
+  with_items:
+    - "{{ include_file_name_results.stdout_lines }}"
+
+...

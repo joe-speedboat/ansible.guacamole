@@ -1,0 +1,27 @@
+---
+- name: Install epel repository
+  yum:
+    name: epel-release
+    state: present
+
+- name: Install iotti (Tomcat) repository
+  yum:
+    disable_gpg_check: yes
+    name: http://repo.iotti.biz/CentOS/8/noarch/lux-release-8-1.noarch.rpm
+    state: present
+    
+- name: Install MySQL Repositorya
+  yum:
+    disable_gpg_check: yes
+    name: http://repo.mysql.com/mysql80-community-release-el8.rpm
+    state: present 
+
+- name: Install necessary packages
+  yum:
+    name: "{{ guacamole_packages_EL }}"
+    state: present
+
+- name: Install CentOS-8 specific packages
+  yum:
+    name: "{{ centos8_packages }}"
+    state: present
