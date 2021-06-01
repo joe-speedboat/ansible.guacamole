@@ -21,7 +21,8 @@
   - name: open https port on firewalld
     firewalld:
       service: https
-      permanent: true
+      permanent: yes
+      immediate: yes
       state: enabled
   - name: enable firewalld
     service:

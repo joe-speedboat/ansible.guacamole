@@ -25,3 +25,16 @@
   yum:
     name: "{{ centos8_packages }}"
     state: present
+
+- name: ensure SELinux boolean is set for nginx reverse proxy
+  seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
+
+- name: ensure SELinux boolean is set for tomcat DB connect
+  seboolean:
+    name: tomcat_can_network_connect_db
+    state: yes
+    persistent: yes
+...
