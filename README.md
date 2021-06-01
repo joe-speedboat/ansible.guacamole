@@ -13,12 +13,12 @@ This Ansible Role is installing and configuring Guacamole HTML5 Gateway
 curl -L ansible.bitbull.ch | bash
 ```
 
-## Installation with ansible-galaxy:
+## Install role with ansible-galaxy:
 ```bash
 ansible-galaxy install joe-speedboat.guacamole
 ```
 
-## Install with git:
+## Install role with git:
 ```bash
 git clone https://github.com/joe-speedboat/ansible.guacamole.git /etc/ansible/roles/joe-speedboat.guacamole
 ```
