@@ -36,6 +36,7 @@ centos7_packages:
   - mysql-connector-java
   
 centos8_packages:
+  - python3-libsemanage
   - python3-lxml
   - python3-mysql
   - mysql-connector-java
