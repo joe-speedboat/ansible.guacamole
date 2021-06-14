@@ -31,13 +31,13 @@ git clone https://github.com/joe-speedboat/ansible.guacamole.git /etc/ansible/ro
   * CentOS Stream
 
 ## Role dependencies
-* community.mysql
+* mariadb role
 ```bash
 ansible-galaxy role install -r roles/requirements.yml
 ```
 
 ## Collection depencies
-* community.mysql
+* community.mysql from mariadb role
 ```bash
 ansible-galaxy collection install -r collections/requirements.yml
 ```
