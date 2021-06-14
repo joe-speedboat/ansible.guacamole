@@ -11,9 +11,8 @@ galaxy_info:
   platforms:
   - name: EL
     versions:
-    - 7
     - 8
-    - Stream
+    - 7
 
   galaxy_tags: [guacamole, nginx, html5, rdp, vnc, ssh, telnet]
 ...
