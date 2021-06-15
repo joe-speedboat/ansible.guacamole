@@ -3,7 +3,9 @@
   template:
     src: guacamole.properties.j2 
     dest: /etc/guacamole/guacamole.properties
-  notify: restart tomcat
+  notify: 
+    - restart tomcat
+    - restart guacd
 
 - name: Configure guacamole (2/2)
   file:
@@ -54,5 +56,7 @@
   changed_when: "requirements_check.rc != 0"
   register: requirements_check
   failed_when: requirements_check.stderr
-  notify: restart tomcat
+  notify: 
+    - restart tomcat
+    - restart guacd
 ...
