@@ -50,6 +50,7 @@ nginx_packages_EL:
 mariadb_secure_installation: yes
 mariadb_databases:
   - name: '{{ mariadb_db_name }}'
+
 mariadb_users_create:
   - name: '{{ mariadb_db_user }}'
     hosts:

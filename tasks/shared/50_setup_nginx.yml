@@ -27,4 +27,3 @@
     mode: 0750
   notify: restart nginx
 ...
-

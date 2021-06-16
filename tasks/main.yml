@@ -1,22 +1,44 @@
 ---
+######## START: Get playbooks to run ########
 
-# Don't touch this file
+- set_fact:
+    include_file_names: []
 
-- name: include global vars file if present
-  import_tasks: include-vars.yml
-
-- name: find all task files
+- name: find all task files with numeric pattern
   local_action:
-    shell
-      ls -1 {{ role_path }}/tasks/*/*  | sed 's#.*\/##' | egrep '[0-9]{2}_.*\.yml' | sort -n -u
-  register: include_file_name_results
-  changed_when: False
+    module: find
+    paths: "{{ role_path }}/tasks" 
+    recurse: yes 
+    depth: 2 
+    file_type: file 
+    use_regex: yes 
+    patterns: ['^[0-9]{2}_.*.yml$']
+  register: found_playbooks
 
+- debug: var=found_playbooks
+
+- name: trim all playbook paths
+  set_fact:
+    include_file_names: "{{ include_file_names + [ plays.path | regex_replace('.*/', '') ] }}"
+  loop: "{{ found_playbooks.files }}"
+  loop_control:
+    loop_var: plays
+
+- name: sort and uniq
+  set_fact: 
+    include_file_names: "{{ include_file_names | unique | sort }}"
+
+- debug: var=include_file_names
+
+######## END: Get playbooks to run ########
+
+
+######## START: Execution part ########
 - name: "include tasks"
   include_tasks: "include-file.yml"
   loop_control:
     loop_var: include_file_name 
   with_items:
-    - "{{ include_file_name_results.stdout_lines }}"
-
+    - "{{ include_file_names }}"
+######## END: Execution part ########
 ...
