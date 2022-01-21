@@ -26,7 +26,7 @@ git clone https://github.com/joe-speedboat/ansible.guacamole.git /etc/ansible/ro
 ## Requirements
 * Ansible 2.9 or higher is required for this Ansible Role
 * OS Releases:
-  * CentOS7
+  * Alma8
   * CentOS8
   * CentOS Stream
 

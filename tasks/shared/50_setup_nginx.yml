@@ -1,6 +1,6 @@
 ---
 - name: Install necessary packages
-  yum:
+  dnf:
     name: '{{ nginx_packages_EL }}'
     state: present
 

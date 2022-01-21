@@ -7,7 +7,7 @@ run_systemcheck: yes
 # Role Specific
 
 # --- GENERAL CONFIG ---
-guacamole_version: 1.3.0
+guacamole_version: 1.4.0
 guacamole_extensions:
   - name: guacamole-auth-jdbc
     file: "guacamole-auth-jdbc-{{ guacamole_version }}/mysql/guacamole-auth-jdbc-mysql-{{ guacamole_version }}.jar"
