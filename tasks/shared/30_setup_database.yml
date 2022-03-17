@@ -11,7 +11,7 @@
 
 - name: Make sure guacamole-auth-jdbc-mysql is downloaded
   unarchive:
-    src: 'http://apache.mirrors.tds.net/incubator/guacamole/{{ guacamole_version }}/binary/guacamole-auth-jdbc-{{ guacamole_version }}.tar.gz'
+    src: 'https://dlcdn.apache.org/guacamole/{{ guacamole_version }}/binary/guacamole-auth-jdbc-{{ guacamole_version }}.tar.gz'
     remote_src: yes
     dest: '{{ guacamole_temp_path }}'
     creates: '{{ guacamole_temp_path }}/guacamole-auth-jdbc-{{ guacamole_version }}/mysql/guacamole-auth-jdbc-mysql-{{ guacamole_version }}.jar'

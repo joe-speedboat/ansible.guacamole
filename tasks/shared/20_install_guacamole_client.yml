@@ -30,7 +30,7 @@
 
 - name: Download guacamole extensions
   get_url:
-    url: 'https://downloads.apache.org/guacamole/{{ guacamole_version }}/binary/{{ item.name }}-{{ guacamole_version }}.tar.gz'
+    url: 'https://dlcdn.apache.org/guacamole/{{ guacamole_version }}/binary/{{ item.name }}-{{ guacamole_version }}.tar.gz'
     dest: '{{ guacamole_temp_path }}'
   with_items: "{{ guacamole_extensions }}"
 
