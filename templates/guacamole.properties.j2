@@ -5,6 +5,9 @@ mysql-database: {{ mariadb_db_name }}
 mysql-username: {{ mariadb_db_user }}
 mysql-password: {{ mariadb_user_password }}
 
+# alma8 uses ipv6 for localhost, which causes connection error
+guacd-hostname: ::1
+
 # Additional settings
 mysql-default-max-connections-per-user: 0
 mysql-default-max-group-connections-per-user: 0
