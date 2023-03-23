@@ -1,17 +1,4 @@
 ---
-# Here belong all variables, that can be changed by a vars-file,
-# a playbook or a include.
-
-# Systemcheck
-systemcheck_physical_memory: 1536 # In MB
-systemcheck_swap_memory: 0 # In MB
-systemcheck_disk: 21474836480 # in bytes ; 20G
-systemcheck_cpus: 2
-
-# FIREWALL CONFIG
-guacamole_role_ports:
-  - port: 443
-    protocol: tcp
 
 guacamole_temp_path: /tmp/guacamole_tmp
 tomcat_conf: /etc/tomcat/tomcat.conf
@@ -20,28 +7,26 @@ tomcat_server_xml: /etc/tomcat/server.xml
 guacamole_packages_EL:
   - ca-certificates
   - ghostscript
-  - java-1.8.0-openjdk
+  - java-11-openjdk
   - "guacd-{{ guacamole_version }}"
   - "libguac-{{ guacamole_version }}"
   - "libguac-client-rdp-{{ guacamole_version }}"
   - "libguac-client-ssh-{{ guacamole_version }}"
   - "libguac-client-telnet-{{ guacamole_version }}"
   - "libguac-client-vnc-{{ guacamole_version }}"
-  - terminus-fonts
+  - dejavu-sans-mono-fonts
   - freerdp
   - tomcat
 
-centos7_packages:
-  - MySQL-python
-  - mysql-connector-java
-  
-centos8_packages:
+basis_packages_EL:
   - tar
   - unzip
   - python3-libsemanage
   - python3-lxml
-  - python3-mysql
-  - mysql-connector-java
+  - python3-mysqlclient
+
+jdbc_jar: 'mariadb-java-client-{{ jdbc_version }}.jar'
+jdbc_url: 'https://downloads.mariadb.com/Connectors/java/connector-java-{{ jdbc_version }}/{{ jdbc_jar }}'
   
 nginx_packages_EL:
   - nginx

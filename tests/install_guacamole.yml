@@ -1,6 +1,6 @@
 #!/usr/bin/ansible-playbook 
 ---
-- hosts: vm21
+- hosts: test-rocky*
   roles:
   - role: joe-speedboat.guacamole
     mariadb_db_host: 'localhost'

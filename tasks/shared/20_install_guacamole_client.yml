@@ -14,11 +14,17 @@
     - /usr/share/tomcat/.guacamole/lib
     - /usr/share/tomcat/.guacamole/extensions
 
-- name: link mysql-connector-java into tomcat lib
-  file:
-    src: /usr/share/java/mysql-connector-java.jar
-    dest: /usr/share/tomcat/.guacamole/lib/mysql-connector-java.jar
-    state: link
+
+- name: guacamole - mariadb | download jdbc driver
+  get_url:
+    dest: '/usr/share/tomcat/.guacamole/lib/{{ jdbc_jar }}'
+    url: '{{ jdbc_url }}'
+
+#- name: link mysql-connector-java into tomcat lib
+#  file:
+#    src: /usr/share/java/mysql-connector-java.jar
+#    dest: /usr/share/tomcat/.guacamole/lib/mysql-connector-java.jar
+#    state: link
 
 - name: Install guacamole-{{ guacamole_version }}.war
   get_url:

@@ -19,6 +19,7 @@
 
 - name: Create database schema
   mysql_db:
+    login_unix_socket: /var/lib/mysql/mysql.sock
     name: '{{ mariadb_db_name }}'
     state: import
     target: '{{ guacamole_temp_path }}/guacamole-auth-jdbc-{{ guacamole_version }}/mysql/schema/001-create-schema.sql'

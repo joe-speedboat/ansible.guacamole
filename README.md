@@ -24,11 +24,11 @@ git clone https://github.com/joe-speedboat/ansible.guacamole.git /etc/ansible/ro
 ```
 
 ## Requirements
-* Ansible 2.9 or higher is required for this Ansible Role
+* Ansible 3.11 or higher is required for this Ansible Role
 * OS Releases:
-  * Alma8
-  * CentOS8
-  * CentOS Stream
+  * Rocky Linux 8
+  * Rocky Linux 9
+  * other RHELish OS may work, but are not tested
 
 ## Role dependencies
 * mariadb role
