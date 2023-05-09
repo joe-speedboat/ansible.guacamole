@@ -17,6 +17,7 @@ guacamole_packages_EL:
   - dejavu-sans-mono-fonts
   - freerdp
   - tomcat
+  - mysql-connector-java
 
 basis_packages_EL:
   - tar

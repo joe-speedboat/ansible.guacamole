@@ -1,9 +1,8 @@
 #!/usr/bin/ansible-playbook 
 ---
-- hosts: test-rocky*
+- hosts: test-rocky9
   roles:
   - role: joe-speedboat.guacamole
-    mariadb_db_host: 'localhost'
     mariadb_db_name: 'guacamole'
     mariadb_db_user: 'guacamole'
     mariadb_user_password: '.change-this_000.'

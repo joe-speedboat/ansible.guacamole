@@ -13,18 +13,25 @@
     - /usr/share/tomcat/.guacamole
     - /usr/share/tomcat/.guacamole/lib
     - /usr/share/tomcat/.guacamole/extensions
+    - "{{ session_recording_path }}"
 
+- name: set permission for session recording path
+  file:
+    path: "{{ session_recording_path }}"
+    owner: guacd
+    group: tomcat
+    mode: '2750'
 
 - name: guacamole - mariadb | download jdbc driver
   get_url:
     dest: '/usr/share/tomcat/.guacamole/lib/{{ jdbc_jar }}'
     url: '{{ jdbc_url }}'
 
-#- name: link mysql-connector-java into tomcat lib
-#  file:
-#    src: /usr/share/java/mysql-connector-java.jar
-#    dest: /usr/share/tomcat/.guacamole/lib/mysql-connector-java.jar
-#    state: link
+- name: link mysql-connector-java into tomcat lib
+  file:
+    src: /usr/share/java/mysql-connector-java.jar
+    dest: /usr/share/tomcat/lib/mysql-connector-java.jar
+    state: link
 
 - name: Install guacamole-{{ guacamole_version }}.war
   get_url:

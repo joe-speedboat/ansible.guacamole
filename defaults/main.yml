@@ -2,16 +2,17 @@
 # Role Specific
 
 # --- GENERAL CONFIG ---
-guacamole_version: 1.5.0
+guacamole_version: 1.5.1
 guacamole_extensions:
   - name: guacamole-auth-jdbc
     file: "guacamole-auth-jdbc-{{ guacamole_version }}/mysql/guacamole-auth-jdbc-mysql-{{ guacamole_version }}.jar"
+  - name: guacamole-history-recording-storage
+    file: "guacamole-history-recording-storage-{{ guacamole_version }}/guacamole-history-recording-storage-{{ guacamole_version }}.jar"
 #  - name: guacamole-auth-ldap
 #    file: "guacamole-auth-ldap-{{ guacamole_version }}/guacamole-auth-ldap-{{ guacamole_version }}.jar"
 #  - name: guacamole-auth-totp
 #    file: "guacamole-auth-totp-{{ guacamole_version }}/guacamole-auth-totp-{{ guacamole_version }}.jar"
-#  - name: guacamole-auth-openid
-#    file: "guacamole-auth-openid-{{ guacamole_version }}/guacamole-auth-openid-{{ guacamole_version }}.jar"
+session_recording_path: /srv/session_recording
 
 
 # --- DATABASE CONFIG ---

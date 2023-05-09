@@ -9,6 +9,12 @@
     name: "{{ basis_packages_EL }}"
     state: present
 
+- name: Install MySQL Repository
+  dnf:
+    disable_gpg_check: yes
+    name: "http://repo.mysql.com/mysql80-community-release-el{{ ansible_distribution_major_version }}.rpm"
+    state: present
+
 - name: Install GUACAMOLE specific packages
   dnf:
     name: "{{ guacamole_packages_EL }}"
