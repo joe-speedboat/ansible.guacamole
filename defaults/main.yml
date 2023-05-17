@@ -14,6 +14,11 @@ guacamole_extensions:
 #    file: "guacamole-auth-totp-{{ guacamole_version }}/guacamole-auth-totp-{{ guacamole_version }}.jar"
 session_recording_path: /srv/session_recording
 
+### load custom extensions like radius
+#guacamole_custom_extensions:
+#  - name: guacamole-auth-radius
+#    url: "https://github.com/joe-speedboat/docker.guacamole-auth-radius-build/raw/main/guacamole-auth-radius-{{ guacamole_version }}.jar"
+
 
 # --- DATABASE CONFIG ---
 jdbc_version: '3.1.3'

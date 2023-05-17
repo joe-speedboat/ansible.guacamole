@@ -26,5 +26,12 @@ mysql-default-max-group-connections-per-user: 0
 ## https://guacamole.apache.org/doc/gug/totp-auth.html
 #totp-issuer: Guacamole RDP Gateway
 
+## RADIUS Auth config template
+## https://www.bitbull.ch/wiki/index.php/Compile_guacamole_auth_radius
+#radius-hostname 192.168.111.222
+#radius-auth-port 1812
+#radius-auth-protocol pap
+#radius-shared-secret xxx...xxx
+
 # session recording path
 recording-search-path: {{ session_recording_path }}

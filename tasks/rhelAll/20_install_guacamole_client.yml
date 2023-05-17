@@ -64,6 +64,16 @@
     remote_src: True
   with_items: "{{ guacamole_extensions }}"
 
+- name: Download custom guacamole extensions
+  get_url:
+    url: '{{ item.url }}'
+    dest: "/usr/share/tomcat/.guacamole/extensions/{{ item.name }}.jar"
+    owner: root
+    group: tomcat
+    mode: 0440
+  with_items: "{{ guacamole_custom_extensions }}"
+  when: guacamole_custom_extensions is defined
+
 - name: set JAVA_OPTS for tomcat
   lineinfile:
     dest: "{{ tomcat_conf }}"
