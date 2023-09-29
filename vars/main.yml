@@ -8,12 +8,12 @@ guacamole_packages_EL:
   - ca-certificates
   - ghostscript
   - java-11-openjdk
-  - "guacd-{{ guacamole_version }}"
-  - "libguac-{{ guacamole_version }}"
-  - "libguac-client-rdp-{{ guacamole_version }}"
-  - "libguac-client-ssh-{{ guacamole_version }}"
-  - "libguac-client-telnet-{{ guacamole_version }}"
-  - "libguac-client-vnc-{{ guacamole_version }}"
+  - "guacd"
+  - "libguac"
+  - "libguac-client-rdp"
+  - "libguac-client-ssh"
+  - "libguac-client-telnet"
+  - "libguac-client-vnc"
   - dejavu-sans-mono-fonts
   - freerdp
   - tomcat

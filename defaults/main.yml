@@ -2,7 +2,7 @@
 # Role Specific
 
 # --- GENERAL CONFIG ---
-guacamole_version: 1.5.1
+guacamole_version: 1.5.3
 guacamole_extensions:
   - name: guacamole-auth-jdbc
     file: "guacamole-auth-jdbc-{{ guacamole_version }}/mysql/guacamole-auth-jdbc-mysql-{{ guacamole_version }}.jar"
