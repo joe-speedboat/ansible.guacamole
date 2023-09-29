@@ -15,7 +15,7 @@ curl -L ansible.bitbull.ch | bash
 
 ## Install role and deps with ansible-galaxy:
 ```bash
-ansible-galaxy install joe-speedboat.guacamole
+ansible-galaxy install joe-speedboat.guacamole joe-speedboat.mariadb
 ansible-galaxy collection install ansible.posix community.general
 ```
 
