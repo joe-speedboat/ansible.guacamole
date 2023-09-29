@@ -1,6 +1,6 @@
 #!/usr/bin/ansible-playbook 
 ---
-- hosts: test-rocky9
+- hosts: test01
   roles:
   - role: joe-speedboat.guacamole
     mariadb_db_name: 'guacamole'

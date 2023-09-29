@@ -15,8 +15,7 @@ curl -L ansible.bitbull.ch | bash
 
 ## Install role and deps with ansible-galaxy:
 ```bash
-ansible-galaxy install joe-speedboat.guacamole joe-speedboat.mariadb
-ansible-galaxy collection install ansible.posix community.general
+ansible-galaxy install joe-speedboat.guacamole
 ```
 
 ## Install role with git:
@@ -42,16 +41,6 @@ ansible-galaxy role install -r roles/requirements.yml
 ```bash
 ansible-galaxy collection install -r collections/requirements.yml
 ```
-
-## uniQconsulting ag
-I am working for uniQconsulting ag and the initial roles I have written in my free time to prepare for Red Hat Ansible exam.
-When uniQconsulting ag started to work more and more with Ansible, I moved this roles into the uniQconsulting github namespace.
-However, for a better suit of my community depending needs, I dediced to take them back and maintain them in my free time again, independent and more flexible version of it.
-Feel free to use, discuss and make some pull requests if you feel the need.
-
-Thanks
-
-Chris
 
 ## Role Variables
 Variables are self speaking or documented in:   
