@@ -12,6 +12,8 @@ guacamole_extensions:
 #    file: "guacamole-auth-ldap-{{ guacamole_version }}/guacamole-auth-ldap-{{ guacamole_version }}.jar"
 #  - name: guacamole-auth-totp
 #    file: "guacamole-auth-totp-{{ guacamole_version }}/guacamole-auth-totp-{{ guacamole_version }}.jar"
+
+# https://guacamole.apache.org/doc/gug/recording-playback.html
 session_recording_path: /srv/session_recording
 
 ### load custom extensions like radius
