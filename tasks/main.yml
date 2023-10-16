@@ -41,7 +41,7 @@
     paths: 
     - /runner/requirements_roles
     - "{{ lookup('env', 'PWD') }}/roles/{{role_path|basename}}/tasks"
-    - "{{ lookup('env', 'HOME') }}/.ansible/roles{{role_path|basename}}/tasks"
+    - "{{ lookup('env', 'HOME') }}/.ansible/roles/{{role_path|basename}}/tasks"
     - "/usr/share/ansible/roles/{{role_path|basename}}/tasks"
     - "/etc/ansible/roles/{{role_path|basename}}/tasks"
     - "/runner/project/roles/{{role_path|basename}}/tasks"
